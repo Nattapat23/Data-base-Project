@@ -336,7 +336,7 @@ if ($result->num_rows > 0) {
                     <div class="movie-list">
                     <?php
                         $start = 6;   
-                        $end = 10; 
+                        $end = 11; 
                             for ($i = $start; $i <= $end && $i < count($rows); $i++) {
                                 $movie = $rows[$i];
 
@@ -371,8 +371,8 @@ if ($result->num_rows > 0) {
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                     <?php
-                        $start = 11;   
-                        $end = 15; 
+                        $start = 12;   
+                        $end = 17; 
                             for ($i = $start; $i <= $end && $i < count($rows); $i++) {
                                 $movie = $rows[$i];
 
@@ -406,8 +406,8 @@ if ($result->num_rows > 0) {
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                     <?php
-                        $start = 16;   
-                        $end = 20; 
+                        $start = 18;   
+                        $end = 23; 
                             for ($i = $start; $i <= $end && $i < count($rows); $i++) {
                                 $movie = $rows[$i];
                                 
@@ -706,6 +706,7 @@ const profileContainer = document.querySelector('.profile-text-container');
 const profileOverlay = document.getElementById('profile-overlay');
 const profileCloseBtn = document.getElementById('profile-close');
 const logoutBtn = document.getElementById('logout-btn');
+const deleteBtn = document.getElementById('delete-btn');
 const movieOverlay = document.getElementById('movie-overlay');
 const movieCloseBtn = document.getElementById('movie-close');
 
@@ -797,6 +798,25 @@ document.addEventListener('keydown', (e) => {
         if (movieOverlay) movieOverlay.classList.remove('show');
     }
 });
+
+if (deleteBtn) {
+    deleteBtn.onclick = async () => {
+        if (confirm("Are you sure you want to delete your Watch History?")) {
+            try {
+                const res = await fetch("delete_history.php", {
+                    method: "POST"
+                });
+                const text = await res.text();
+                alert(text);
+                location.reload();
+            } catch (err) {
+                console.warn("Error deleting history:", err);
+                alert("Failed to delete history. Please try again later.");
+            }
+        }
+    };
+}
+
 
 // ====== 6. LOGOUT ======
 if (logoutBtn) {
