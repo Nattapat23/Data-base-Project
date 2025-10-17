@@ -8,6 +8,7 @@ Its core functions include:<br>
 git clone <br>
 and setup data by creat Tabel and then downlond data at IMDB<br>
 Data: https://developer.imdb.com/non-commercial-datasets/?utm_source=chatgpt.com<br>
+control c in mac to close<br>
 SETUP DATA<br>
 **IMDb Table --> Luminix Table : Key **<br>
 title.basics --> Content : tconst --> ContentID<br>
