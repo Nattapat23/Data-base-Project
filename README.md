@@ -17,6 +17,7 @@ title.episode --> Episode : tconst --> EpisodeID , parentTconst → SeriesID<br>
 name.basics -->Person : nconst --> PersonID<br>
 title.principals --> ContentPerson : tconst → ContentID, nconst → PersonID<br>
 title.ratings --> Rating : tconst → ContentID<br>
+for big data use py code to lode data to mysql
 # Usage
 after setup data<br>
 run in terminal<br>
